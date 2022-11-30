@@ -9,10 +9,10 @@ use chrono::{ Datelike};
 
 fn main()  -> Result<(),Box<dyn std::error::Error>>{
 
-    let now = chrono::offset::Local::now().date_naive();
-    let year = now.year();
-    let day = now.day();
-    let month = now.month();
+    let _now = chrono::offset::Local::now().date_naive();
+    let year = 2021; //now.year();
+    let day = 6;    //now.day();
+    let month = 12; _now.month();
     if month != 12 {
         println!("Not December yet, come back later.");
     }else {
