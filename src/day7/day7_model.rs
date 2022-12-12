@@ -63,9 +63,10 @@ impl ElfFolder {
     }
 }
 
+
 pub struct FileSystem<'a>{
     pub root: ElfFolder,
-    cur_dir: VecDeque< &'a mut ElfFolder>,
+    pub cur_dir: VecDeque< &'a mut ElfFolder>,
 }
 
 impl <'a> InputParser for FileSystem<'_>{
@@ -82,7 +83,7 @@ impl <'a> InputParser for FileSystem<'_>{
                             "/" => { // Go to root
                                 self.cur_dir.clear();
                                 let x = &mut self.root;
-                                self.cur_dir.push_back(x)
+                                //self.cur_dir.push_back(x)
                             }
                             dir => { // Go down to directory named dir
 
