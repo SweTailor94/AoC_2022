@@ -15,7 +15,6 @@ impl ElfMap {
         next_try.push_back((self.start, 0));
         while next_try.len() > 0{
             let next = next_try.pop_front().unwrap();
-            println!("at {:?} after {} steps.",next.0,next.1);
             if visited.contains(&next.0) { continue;}
             if next.0 == self.end {
                 //done
@@ -61,7 +60,6 @@ impl ElfMap {
         next_try.push_back((self.end, 0));
         while next_try.len() > 0{
             let next = next_try.pop_front().unwrap();
-            println!("at {:?} after {} steps.",next.0,next.1);
             if visited.contains(&next.0) { continue;}
             if self.heights[next.0.0 as usize][next.0.1 as usize] == b'a'  {
                 //done
