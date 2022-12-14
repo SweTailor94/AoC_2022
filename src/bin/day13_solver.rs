@@ -158,13 +158,16 @@ fn is_correct(left: &ElfList, right: &ElfList) -> i32 {
             loop {
                 if i >= l_vec.len() && i >= r_vec.len() {
                     //println!("lists equal");
-                    return 0; }
+                    return 0;
+                }
                 if i >= l_vec.len() {
                     //println!("left list smaller");
-                    return -1; }
+                    return -1;
+                }
                 if i >= r_vec.len() {
                     //println!("right list smaller");
-                    return 1; }
+                    return 1;
+                }
                 let tmp = is_correct(&l_vec[i], &r_vec[i]);
                 if tmp != 0 { return tmp; }
                 i += 1;
