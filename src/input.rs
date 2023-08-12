@@ -17,7 +17,13 @@ pub fn parse_input_file<P>(file_name: &str, parser: &mut P) -> Result<()> where
     };
     Ok(())
 }
-
+pub fn parse_input_string<P>(input: &String, parser: &mut P) -> Result<()> where
+    P: InputParser{
+    for line in input.lines() {
+        parser.parse_line(&(line.to_string()))?;
+    };
+    Ok(())
+}
 pub fn get_vector_from_file<T, F>(file_name: &str, mut transform: F) -> Vec<T> where
     F: FnMut(&str) -> T {
     let mut all_of_them: Vec<T> = Vec::new();
